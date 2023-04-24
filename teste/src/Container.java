@@ -15,18 +15,21 @@ import javax.swing.Timer;
 
 import src.Imagens;
 
-public class Container extends JPanel implements ActionListener{
+public class Container extends JPanel implements ActionListener {
     private Image fundo;
     private Timer timer;
-	public static boolean Sinal=false;
-	public int i = 0, j=0, flag = 4, qtd=3;
-	public int menosflag = 0-flag;
-	private int distancia = 220/flag;
-	private int length;
+    public static boolean Sinal = false;
+    public int i = 0, j = 0, flag = 4, qtd = 3;
+    public int menosflag = 0 - flag;
+    private int distancia = 220 / flag;
+    private int length;
 
     public Container() {
-		
-		
-	}
-    
+
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent actionEvent) {
+
+    }
 }
