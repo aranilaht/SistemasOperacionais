@@ -19,7 +19,6 @@ public class Cesto {
         this.cesto_vazio = new Semaphore(tamCesto, true);
         this.cesto_cheio = new Semaphore(tamCesto, true);
         cesto_cheio.tryAcquire(tamCesto);
-        cesto_vazio.release(tamCesto);
         this.mutex = new Semaphore(1, true);
         this.numeroBolas = 0;
 
@@ -40,6 +39,7 @@ public class Cesto {
         cesto_vazio.acquire();
         mutex.acquire();
         numeroBolas++;
+        System.out.println("Tamanho do Cesto: " + tamCesto + " || Bolas no Cesto: " + numeroBolas);
         mutex.release();
         cesto_cheio.release();
         return true;
@@ -49,6 +49,7 @@ public class Cesto {
         cesto_cheio.acquire();
         mutex.acquire();
         numeroBolas--;
+        System.out.println("Tamanho do Cesto: " + tamCesto + " || Bolas no Cesto: " + numeroBolas);
         mutex.release();
         cesto_vazio.release();
         return true;
